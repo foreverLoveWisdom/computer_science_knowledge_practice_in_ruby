@@ -16,7 +16,7 @@ def get_first_recurring_char(arr)
     key = ele.is_a?(Integer) ? ele.to_s : ele.to_sym
     return ele if hash[key]
 
-    hash[key] = 1
+    hash[key] = 'e'
   end
   'The array is unique. No recurring character!!!'
 end
