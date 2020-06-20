@@ -21,6 +21,7 @@ def get_first_recurring_char(arr)
   'The array is unique. No recurring character!!!'
 end
 
+# Not finished yet
 def get_first_recurring_char_without_hash(arr)
   no_of_elements = arr.size
   results        = []
@@ -40,3 +41,4 @@ end
 
 # puts get_first_recurring_char [3, 5, 5, 3, 4]
 print get_first_recurring_char_without_hash [3, 5, 2, 5, 2, 3]
+puts get_first_recurring_char [3, 5, 1, 2, 4]
