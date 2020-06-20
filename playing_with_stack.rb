@@ -51,7 +51,6 @@ class Stack
       removed_top
     end
   end
-
 end
 
 # class StackBasedOnArray < Array
@@ -69,6 +68,20 @@ stack = Stack.new
 stack.push(node)
 stack.push(Node.new(99))
 print stack.push(Node.new(111)).inspect
+puts "\n"
+print stack.pop
+print "\nCurrent top node is: #{stack.top.inspect}"
+print "\nCurrent length is: #{stack.length}"
+stack.pop
+print "\nCurrent length is: #{stack.length}"
+print "\n"
+print stack.inspect
+stack.pop
+print "\nCurrent length is: #{stack.length}"
+puts "\n"
+print stack.inspect
+puts "\n"
+puts stack.pop
 puts "\n"
 print stack.pop
 print "\nCurrent top node is: #{stack.top.inspect}"
