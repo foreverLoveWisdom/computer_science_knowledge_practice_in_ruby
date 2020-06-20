@@ -12,50 +12,74 @@ class Node
   end
 end
 
-# class Stack
-#   attr_accessor :top, :bottom, :length
-#
-#   def initialize
-#     @top    = nil
-#     @bottom = nil
-#     @length = 0
-#   end
-#
-#   def peek
-#     top
-#   end
-#
-#   def push(node)
-#     if length.zero?
-#       @bottom = @top = node
-#     else
-#       @top.next = self.top = node
-#     end
-#
-#     self.length += 1
-#     self
-#   end
-#
-#   def pop
-#     node_next_to_top = top
-#     self.length      -= 1
-#   end
-# end
+class Stack
+  attr_accessor :top, :bottom, :length
 
-class StackBasedOnArray < Array
   def initialize
-    super
+    @top    = nil
+    @bottom = nil
+    @length = 0
   end
 
   def peek
-    last
+    top
   end
+
+  def push(node)
+    if length.zero?
+      @bottom = @top = node
+    else
+      current_top = top
+      self.top    = node
+      top.next    = current_top
+    end
+
+    self.length += 1
+    self
+  end
+
+  def pop
+    if length.zero?
+      'Nothing to pop because the stack is empty'
+    elsif length == 1
+      self.bottom = self.top = nil
+      self.length = 0
+    else
+      removed_top = top
+      self.top    = top.next
+      self.length -= 1
+      removed_top
+    end
+  end
+
 end
 
-# node  = Node.new(8)
-stack = StackBasedOnArray.new
-stack.push(8)
-stack.push(99)
-print stack.push(111)
+# class StackBasedOnArray < Array
+#   def initialize
+#     super
+#   end
+#
+#   def peek
+#     last
+#   end
+# end
+
+node  = Node.new(8)
+stack = Stack.new
+stack.push(node)
+stack.push(Node.new(99))
+print stack.push(Node.new(111)).inspect
 puts "\n"
-print stack.peek.inspect
+print stack.pop
+print "\nCurrent top node is: #{stack.top.inspect}"
+print "\nCurrent length is: #{stack.length}"
+stack.pop
+print "\nCurrent length is: #{stack.length}"
+print "\n"
+print stack.inspect
+stack.pop
+print "\nCurrent length is: #{stack.length}"
+puts "\n"
+print stack.inspect
+puts "\n"
+puts stack.pop
