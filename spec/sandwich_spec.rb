@@ -31,10 +31,13 @@ RSpec.describe 'An ideal sandwich' do
   # Check what it is supposed to do
 
   # This is helper method. Just plain ruby code.
-  def sandwich
-    puts "Inside of sandwich helper..."
-    @sandwich ||= Sandwich.new('delicious', [])
-  end
+  # def sandwich
+  #   puts "Inside of sandwich helper..."
+  #   @sandwich ||= Sandwich.new('delicious', [])
+  # end
+
+  # The above method can be replaced by
+  let(:sandwich) { Sandwich.new('delicious', []) }
 
   # RSpec Hooks
   #   Each time RSpec is about to start running one of my the examples,
