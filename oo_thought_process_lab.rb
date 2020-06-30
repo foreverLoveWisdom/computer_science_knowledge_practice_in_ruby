@@ -1,8 +1,4 @@
 class Square
-  def initialize
-    @quare_value = nil
-  end
-
   # This is the interface that the user has access to
   # When I create an interface for the alogirthm and if my algorithm changes
   # I don't need to change my interface. That is the reason why we need to
@@ -12,7 +8,7 @@ class Square
   # Or I should ask, what is most likely to change later?
   # If the user depends on the things that are easy to change, is it a good design?
   def get_square(value)
-    @square_value = calculate_square(value)
+    calculate_square(value)
   end
 
   # If I expost this behaviour to the outside, and this behaviour changes
