@@ -44,6 +44,8 @@ class UserStatistic
 end
 
 # The instance method post in AdminStatistic still returns array data type
+# We have just isolated the business filter into another method(wrap it in
+# an interface), this is just one of the many ways to follow LSP
 class AdminStatistic < UserStatistic
   def posts
     user_posts = super
