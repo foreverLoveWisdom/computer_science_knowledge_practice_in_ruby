@@ -3,6 +3,9 @@
 
 # How about take a look at a violation of this priciple
 # what does this class do?
+# If I can't summarize the responsibility of this class in 1 sentence.
+# Or my summarized sentence includes "or", "and"
+# => there is a high chance that is violating the SR principle.
 #   1. Report generation
 #   2. Report sending
 class FinancialReportMailer
