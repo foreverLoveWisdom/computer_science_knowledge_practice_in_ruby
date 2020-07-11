@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # Implement my own Array data structure based on built-in Array class in ruby
 class MyArray
   attr_accessor :length, :data
@@ -50,3 +49,5 @@ arr.pop_the_last
 puts arr.delete_at_index(3)
 print arr.data
 # print arr.length
+
+
