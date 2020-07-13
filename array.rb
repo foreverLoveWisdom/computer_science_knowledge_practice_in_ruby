@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # Implement my own Array data structure based on built-in Array class in ruby
 class MyArray
   attr_accessor :length, :data
@@ -50,3 +49,14 @@ arr.pop_the_last
 puts arr.delete_at_index(3)
 print arr.data
 # print arr.length
+
+# Most used often methods:
+# each, each_with_index
+# collect, map
+# uniq
+# Set data structure for uniq elements
+# reverse
+# compact
+# delete
+# sort, passing a block if sort_by doesn't work
+# sort_by
