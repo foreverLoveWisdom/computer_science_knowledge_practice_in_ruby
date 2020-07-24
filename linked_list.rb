@@ -11,9 +11,17 @@ class LinkedList
   attr_accessor :length, :head, :tail
 
   def initialize(head = nil)
-    @head   = head
-    @tail   ||= head
+    @head = head
+    @tail ||= head
     @length = head ? 1 : 0
+  end
+
+  def traverse
+    current_node = head
+    until current_node.nil?
+      print "#{current_node.value} "
+      current_node = current_node.next_node
+    end
   end
 
   def insert_after_head(node)
@@ -131,31 +139,9 @@ class LinkedList
   end
 end
 
-node        = Node.new(12)
-linked_list = LinkedList.new
-linked_list.insert_after_head(node)
-linked_list.insert_after_head(Node.new(777))
-linked_list.append(Node.new(666))
-# linked_list.prepend(Node.new(333))
-# linked_list.insert(3, Node.new(999))
-# linked_list.insert(3, Node.new(44))
-# puts linked_list.search(5).inspect
-puts "Current link list's size is: #{linked_list.length}"
-print linked_list.get_values
-puts "\n"
-linked_list.remove(0)
-puts "Current link list's size is: #{linked_list.length}"
-puts "Tail is: #{linked_list.tail.inspect}"
-print linked_list.get_values
-puts "\n"
-# puts "Tail is: #{linked_list.tail.inspect}"
-# puts "Current head after remove is: #{linked_list.head.inspect}"
-linked_list.remove(1)
-puts "\n"
-puts "Current link list's size is: #{linked_list.length}"
-print linked_list.get_values
-# linked_list.remove(1)
-# puts "Tail is: #{linked_list.tail.inspect}"
-puts "Current head after remove is: #{linked_list.head.inspect}"
-puts "Tail is: #{linked_list.tail.inspect}"
-# puts "Current link list's size is: #{linked_list.length}"
+node = Node.new(12)
+linked_list = LinkedList.new(node)
+linked_list.append(Node.new(20))
+linked_list.append(Node.new(30))
+linked_list.append(Node.new(40))
+linked_list.traverse
